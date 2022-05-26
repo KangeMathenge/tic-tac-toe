@@ -55,12 +55,13 @@ import 'animate.css'
                     squares[pattern[2]] === ''
                 ){
                     // do nothing
+                    
                 }else if(
                     squares[pattern[0]] === squares[pattern[1]]&&
                     squares[pattern[1]] === squares[pattern[2]]
                 ){
                     setWinner(squares[pattern[0]])
-                }else if(cells.every(cell=> cell !== "")){
+                }else if(squares.every(item=> item !== "")){
                     setWinner("Draw")
                 }
             })
@@ -82,7 +83,7 @@ import 'animate.css'
 
   return (
     <div>
-        {winner && <Confetti/>}
+        {winner =="X" ||winner =="O" && <Confetti/>}
         <table>
            {!winner ? <p>Turn: {turn}</p>:<p className='animate__animated animate__heartBeat'>Game over Congratulations {winner}</p>}
         <tbody>
