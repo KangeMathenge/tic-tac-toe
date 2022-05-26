@@ -83,9 +83,9 @@ import 'animate.css'
 
   return (
     <div>
-        {winner =="X" ||winner =="O" && <Confetti/>}
+        {(winner ==="X" ||winner ==="O") && <Confetti/>}
+           {!winner ? <p>Turn: {turn}</p>:<h3 className='animate__animated animate__heartBeat game-over'>Game over Congratulations {winner}</h3>}
         <table>
-           {!winner ? <p>Turn: {turn}</p>:<p className='animate__animated animate__heartBeat'>Game over Congratulations {winner}</p>}
         <tbody>
         <tr>
                 <Cell id={0}/>
