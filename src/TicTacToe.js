@@ -61,7 +61,7 @@ import 'animate.css'
                     squares[pattern[1]] === squares[pattern[2]]
                 ){
                     setWinner(squares[pattern[0]])
-                }else if(squares.every(item=> item !== "")){
+                }else if(squares.every(item=> item !== "" && winner)){
                     setWinner("Draw")
                 }
             })
